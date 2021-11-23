@@ -8,6 +8,7 @@ use Session;
 use App\Slider;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
+use App\Product;
 session_start();
 class ProductController extends Controller
 {
@@ -54,6 +55,9 @@ class ProductController extends Controller
         $data['product_status'] = $request->product_status;
         $data['product_image'] = $request->product_status;
         $get_image = $request->file('product_image');
+        // echo'<pre>';
+        // print_r($data);
+        // echo'</pre>';
       
         if($get_image){
             $get_name_image = $get_image->getClientOriginalName();
@@ -65,6 +69,7 @@ class ProductController extends Controller
             Session::put('message','Thêm sản phẩm thành công');
             return Redirect::to('add-product');
         }
+        
         $data['product_image'] = '';
     	DB::table('tbl_product')->insert($data);
     	Session::put('message','Thêm sản phẩm thành công');

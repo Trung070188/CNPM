@@ -51,7 +51,6 @@ class DeliveryController extends Controller
 				';
 
 				echo $output;
-
 		
 	}
 	public function insert_delivery(Request $request){

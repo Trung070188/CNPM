@@ -23,7 +23,7 @@
                                     <input type="text" value="{{$edit_value->category_name}}" onkeyup="ChangeToSlug();" name="category_product_name" class="form-control" id="slug" >
                                 </div>
                                   <div class="form-group">
-                                    <label for="exampleInputEmail1">Slug</label>
+                                    <label for="exampleInputEmail1">Mô tả</label>
                                     <input type="text" value="{{$edit_value->slug_category_product}}" name="slug_category_product" class="form-control" id="convert_slug" >
                                 </div>
                                 <div class="form-group">

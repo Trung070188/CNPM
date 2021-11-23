@@ -1,8 +1,8 @@
 @extends('layout')
 @section('content')
 <div class="features_items"><!--features_items-->
-                       <div class="fb-share-button" data-href="http://localhost/tutorial_youtube/shopbanhanglaravel" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{$url_canonical}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
-                       <div class="fb-like" data-href="{{$url_canonical}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+                       <!-- <div class="fb-share-button" data-href="http://localhost/tutorial_youtube/shopbanhanglaravel" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{$url_canonical}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div> -->
+                       <!-- <div class="fb-like" data-href="{{$url_canonical}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div> -->
                         @foreach($category_name as $key => $name)
                        
                         <h2 class="title text-center">{{$name->category_name}}</h2>
@@ -39,10 +39,10 @@
                                 </div>
                            
                                 <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
+                                    <!-- <ul class="nav nav-pills nav-justified">
                                         <li><a href="#"><i class="fa fa-plus-square"></i>Yêu thích</a></li>
                                         <li><a href="#"><i class="fa fa-plus-square"></i>So sánh</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
                         </div>
