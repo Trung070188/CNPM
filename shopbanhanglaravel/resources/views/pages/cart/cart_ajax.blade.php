@@ -100,15 +100,17 @@
 							
 							<td colspan="2">
 							<li>Tổng tiền :<span>{{number_format($total,0,',','.')}}đ</span></li>
-							@if(Session::get('coupon'))
+							<!-- neu toi tai giam gia -->
+							@if(Session::get('coupon')) 
 							<li>
 								
 									@foreach(Session::get('coupon') as $key => $cou)
-										@if($cou['coupon_condition']==1)
+										<!-- neu condision =1 thi giam theo % -->
+									@if($cou['coupon_condition']==1) 
 											Mã giảm : {{$cou['coupon_number']}} %
 											<p>
 												@php 
-												$total_coupon = ($total*$cou['coupon_number'])/100;
+												$total_coupon = ($total*$cou['coupon_number'])/100; 
 												echo '<p><li>Tổng giảm:'.number_format($total_coupon,0,',','.').'đ</li></p>';
 												@endphp
 											</p>

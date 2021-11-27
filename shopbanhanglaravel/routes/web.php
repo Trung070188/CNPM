@@ -42,15 +42,15 @@ Route::get('/unactive-category-product/{category_product_id}','CategoryProduct@u
 Route::get('/active-category-product/{category_product_id}','CategoryProduct@active_category_product');
 
 //Send Mail 
-Route::get('/send-mail','HomeController@send_mail');
+// Route::get('/send-mail','HomeController@send_mail');
 
 //Login facebook
-Route::get('/login-facebook','AdminController@login_facebook');
-Route::get('/admin/callback','AdminController@callback_facebook');
+// Route::get('/login-facebook','AdminController@login_facebook');
+// Route::get('/admin/callback','AdminController@callback_facebook');
 
 //Login google
-Route::get('/login-google','AdminController@login_google');
-Route::get('/google/callback','AdminController@callback_google');
+// Route::get('/login-google','AdminController@login_google');
+// Route::get('/google/callback','AdminController@callback_google');
 
 Route::post('/save-category-product','CategoryProduct@save_category_product');
 Route::post('/update-category-product/{category_product_id}','CategoryProduct@update_category_product');

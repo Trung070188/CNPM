@@ -35,20 +35,20 @@ class CheckoutController extends Controller
          $shipping->save();
          $shipping_id = $shipping->shipping_id;
 
-         $checkout_code = substr(md5(microtime()),rand(0,26),5);
+         $checkout_code = substr(md5(microtime()),rand(0,26),5); // tu dong tao ra code bat ki lay ra 5 ki tu chu và số
 
   
          $order = new Order;
          $order->customer_id = Session::get('customer_id');
          $order->shipping_id = $shipping_id;
-         $order->order_status = 1;
+         $order->order_status = 1; //don hang moi 
          $order->order_code = $checkout_code;
 
          date_default_timezone_set('Asia/Ho_Chi_Minh');
          $order->created_at = now();
          $order->save();
 
-         if(Session::get('cart')==true){
+         if(Session::get('cart')==true){  // neu tồn tạo giỏ hàng
             foreach(Session::get('cart') as $key => $cart){
                 $order_details = new OrderDetails;
                 $order_details->order_code = $checkout_code;

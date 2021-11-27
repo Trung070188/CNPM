@@ -16,22 +16,22 @@ class CartController extends Controller
     public function check_coupon(Request $request){
         $data = $request->all();
         $coupon = Coupon::where('coupon_code',$data['coupon'])->first();
-        if($coupon){
-            $count_coupon = $coupon->count();
-            if($count_coupon>0){
+        if($coupon){//neu bang true
+            $count_coupon = $coupon->count();//dem ma giam gia
+            if($count_coupon>0){ //neu co giam gia tao session coupon
                 $coupon_session = Session::get('coupon');
-                if($coupon_session==true){
-                    $is_avaiable = 0;
-                    if($is_avaiable==0){
+                if($coupon_session==true){  //neu dung
+                    $is_avaiable = 0;  
+                    if($is_avaiable==0){  //session  ton tai
                         $cou[] = array(
                             'coupon_code' => $coupon->coupon_code,
-                            'coupon_condition' => $coupon->coupon_condition,
-                            'coupon_number' => $coupon->coupon_number,
+                            'coupon_condition' => $coupon->coupon_condition,//dieu kien cua giam gia
+                            'coupon_number' => $coupon->coupon_number, // so luong ma giam  gia
 
                         );
                         Session::put('coupon',$cou);
                     }
-                }else{
+                }else{ // neu chua nhap ma giam gia thi tao ra ma giam gia moi
                     $cou[] = array(
                             'coupon_code' => $coupon->coupon_code,
                             'coupon_condition' => $coupon->coupon_condition,
@@ -55,7 +55,7 @@ class CartController extends Controller
 
         $meta_desc = "Giỏ hàng của bạn"; 
         $meta_keywords = "Giỏ hàng Ajax";
-        $meta_title = "Giỏ hàng Ajax";
+        $meta_title = "Giỏ hàng ";
         $url_canonical = $request->url();
         //--seo
         $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get(); 

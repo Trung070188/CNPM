@@ -170,7 +170,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       
                     </ul>
                 </li>
-                 <li class="sub-menu">
+                 <!-- <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
                         <span>Users</span>
@@ -181,7 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       
                     </ul>
                 </li>
-             
+              -->
             </ul>            </div>
         <!-- sidebar menu end-->
     </div>
@@ -364,10 +364,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
            var wards = $('.wards').val();
            var fee_ship = $('.fee_ship').val();
             var _token = $('input[name="_token"]').val();
-           // alert(city);
-           // alert(province);
-           // alert(wards);
-           // alert(fee_ship);
+          
             $.ajax({
                 url : '{{url('/insert-delivery')}}',
                 method: 'POST',
